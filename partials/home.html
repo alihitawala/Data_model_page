@@ -4,7 +4,7 @@
             <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
         <h3>
-            Dashboard
+            CS 784: Data Models and Languages
         </h3>
         <span flex></span>
         <!--<md-button aria-label="Search" ng-click="showSearch = !showSearch">-->
@@ -38,7 +38,33 @@
 </md-toolbar>
 <md-content flex md-scroll-y>
     <ui-view layout="column" layout-fill layout-padding>
-        <div class="inset" hide-sm></div>
+        <div class="row">
+	    <div class="col-md-1"></div>
+	    <div class="col-md-5">
+
+			<div class="demo-container md-whiteframe-z1">
+                <md-toolbar class="demo-toolbar md-primary md-default-theme md-toolbar-tools">
+                       <h1>Data Integration</h1>
+                </md-toolbar>
+                <md-content class="md-padding ">
+                    <md-card>
+                      <md-card-content>
+                        <h2 class="md-title">Data Science</h2>
+                        <p>
+                          Buying and selling of used bikes is a huge industry. For this project, we crawl data from 2 of the most popular Indian websites that
+                let you buy and sell used bikes - <a href="http://bikedekho.com"><b>BikeDekho</b></a>  and <a href="http://bikedekho.com"><b>BikeWale</b></a>. Our goal is to extract relevant information from the both the websites and match them to find
+                if the exact same bike is being sold at a cheaper price on the other website. We have crawled 4953 BikeDekho postings and about 25412 BikeWale listings.
+                        </p>
+                          <md-button class="md-primary" ng-href="{{googleUrl}}" target="_blank">Final Document of the Project
+
+                              </md-button>
+                      </md-card-content>
+                    </md-card>
+                </md-content>
+			</div>
+	    </div>
+
+
         <ng-switch on="data.selectedIndex" class="tabpanel-container">
             <div role="tabpanel"
                  id="tab1-content"
