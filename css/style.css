@@ -40,3 +40,14 @@ md-sidenav ng-md-icon {
 .user-avatar {
   border-radius: 99%;
 }
+
+.circularclooney {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 100px;
+    background-image: url('http://irishamerica.com/wp-content/uploads/2012/05/George-Clooney.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+	}
