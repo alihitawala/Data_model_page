@@ -34,9 +34,6 @@ app.controller('AppCtrl', ['$scope', '$location', '$mdBottomSheet','$mdSidenav',
     $scope.toggleSidenav = function(menuId) {
         $mdSidenav(menuId).toggle();
     };
-    $scope.go = function ( path ) {
-        $location.path( path );
-    };
     $scope.menu = [
         {
             link : '#/Home',
