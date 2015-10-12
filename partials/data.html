@@ -4,16 +4,16 @@
             <ng-md-icon icon="menu"></ng-md-icon>
         </md-button>
         <h3>
-            Dashboard
+            Data crawled from the two websites, Bikewale.com and BikeDekho.com
         </h3>
         <span flex></span>
     </div>
     <md-tabs md-stretch-tabs class="md-primary" md-selected="data.selectedIndex">
         <md-tab id="tab1" aria-controls="tab1-content">
-            Latest
+            Website - Bikewale.com
         </md-tab>
         <md-tab id="tab2" aria-controls="tab2-content">
-            Favorites
+            Website - Bikedekho.com
         </md-tab>
     </md-tabs>
 </md-toolbar>
@@ -38,7 +38,7 @@
     </div>
 
 </md-toolbar>
-<md-content flex md-scroll-y>
+<md-content layout="column" flex class="md-padding">
     <ui-view layout="column" layout-fill layout-padding>
         <div class="inset" hide-sm></div>
         <ng-switch on="data.selectedIndex" class="tabpanel-container">
@@ -51,31 +51,25 @@
                  layout="row" layout-align="center center">
                 <md-card flex-gt-sm="90" flex-gt-md="80">
                     <md-card-content>
-                        <h2>Activity</h2>
-                        <md-list>
-                            <md-item ng-repeat="item in activity | filter:search">
-                                <md-item-content>
-                                    <div class="md-tile-left inset" hide-sm>
-                                        <user-avatar></user-avatar>
-                                    </div>
-                                    <div class="md-tile-content">
-                                        <h3>{{item.what}}</h3>
-                                        <h4>{{item.who}}</h4>
-                                        <p>
-                                            {{item.notes}}
-                                        </p>
-                                    </div>
-                                </md-item-content>
-                                <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                                <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                            </md-item>
-                            <md-divider></md-divider>
-                            <md-item layout class="inset">
-                                <md-button layout layout-align="start center" flex class="md-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
-                                </md-button>
-                            </md-item>
-                        </md-list>
+                        <md-button class="md-raised md-primary" ng-href="{{htmlA}}"> HTML Pages </md-button>
+                        <div class="inset" hide-sm></div>
+                        <md-button class="md-raised md-primary" ng-href="{{csvFileA}}" target="_blank">CSV File</md-button>
+                        <br/>
+                        <div class="inset" hide-sm></div>
+                        <h2>Table schema for website A (bikewale.com)</h2>
+                        <ul>
+                            <li>id</li>
+                            <li>bike_name</li>
+                            <li>city_posted</li>
+                            <li>km_driven</li>
+                            <li>color</li>
+                            <li>fuel_type</li>
+                            <li>price</li>
+                            <li>model_year</li>
+                            <li>owner_type</li>
+                            <li>url</li>
+                        </ul>
+
                     </md-card-content>
                 </md-card>
             </div>
@@ -88,35 +82,29 @@
                  layout="row" layout-align="center center">
                 <md-card flex-gt-sm="90" flex-gt-md="80">
                     <md-card-content>
-                        <h2>Favorites</h2>
-                        <md-list>
-                            <md-item ng-repeat="item in activity | filter:search | orderBy:'-what'">
-                                <md-item-content>
-                                    <div class="md-tile-left inset" hide-sm>
-                                        <user-avatar></user-avatar>
-                                    </div>
-                                    <div class="md-tile-content">
-                                        <h3>{{item.what}}</h3>
-                                        <h4>{{item.who}}</h4>
-                                        <p>
-                                            {{item.notes}}
-                                        </p>
-                                    </div>
-                                </md-item-content>
-                                <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
-                                <md-divider hide-gt-sm ng-if="!$last"></md-divider>
-                            </md-item>
-                            <md-divider></md-divider>
-                            <md-item layout class="inset">
-                                <md-button layout layout-align="start center" flex class="md-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg> More
-                                </md-button>
-                            </md-item>
-                        </md-list>
+
+                        <md-button class="md-raised md-primary" ng-href="{{htmlB}}"> HTML Pages </md-button>
+                        <div class="inset" hide-sm></div>
+                        <md-button class="md-raised md-primary" ng-href="{{csvFileB}}" target="_blank">CSV File</md-button>
+                        <br/>
+                        <div class="inset" hide-sm></div>
+                        <h2>Table schema for website B (bikedekho.com)</h2>
+                        <ul>
+                            <li>id</li>
+                            <li>bike_name</li>
+                            <li>city_posted</li>
+                            <li>km_driven</li>
+                            <li>color</li>
+                            <li>fuel_type</li>
+                            <li>price</li>
+                            <li>model_year</li>
+                            <li>owner_type</li>
+                            <li>url</li>
+                        </ul>
+
                     </md-card-content>
                 </md-card>
             </div>
-
         </ng-switch>
 
     </ui-view>

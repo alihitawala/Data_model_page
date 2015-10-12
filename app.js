@@ -23,11 +23,19 @@ app.controller('HomeController', ['$scope', '$mdDialog', function($scope, $mdDia
 }]);
 app.controller('DataController', ['$scope', '$mdDialog', function($scope, $mdDialog){
     $scope.title = "Data";
+    $scope.csvFileA = "./files/data.csv"
+    $scope.csvFileB = "./files/data_bikewale.csv"
+    $scope.htmlA = "http://pages.cs.wisc.edu/~shaleen/CS784/"
+    $scope.htmlB = "http://pages.cs.wisc.edu/~shaleen/CS784/"
 }]);
 
-app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
+app.controller('AppCtrl', ['$scope', '$location', '$mdBottomSheet','$mdSidenav', '$mdDialog',
+    function($scope, $location, $mdBottomSheet, $mdSidenav, $mdDialog){
     $scope.toggleSidenav = function(menuId) {
         $mdSidenav(menuId).toggle();
+    };
+    $scope.go = function ( path ) {
+        $location.path( path );
     };
     $scope.menu = [
         {
