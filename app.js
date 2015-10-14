@@ -23,10 +23,10 @@ app.controller('HomeController', ['$scope', '$mdDialog', function($scope, $mdDia
 }]);
 app.controller('DataController', ['$scope', '$mdDialog', function($scope, $mdDialog){
     $scope.title = "Data";
-    $scope.csvFileA = "./files/data.csv"
-    $scope.csvFileB = "./files/data_bikewale.csv"
-    $scope.htmlA = "http://pages.cs.wisc.edu/~shaleen/CS784/"
-    $scope.htmlB = "http://pages.cs.wisc.edu/~shaleen/CS784/"
+    $scope.csvFileA = "http://pages.cs.wisc.edu/~shaleen/CS784/Data_model_page/html/BikeWale/Bikewale.csv"
+    $scope.csvFileB = "http://pages.cs.wisc.edu/~shaleen/CS784/Data_model_page/html/BikeDekho/BikeDekho.csv"
+    $scope.htmlA = "http://pages.cs.wisc.edu/~shaleen/CS784/Data_model_page/html/BikeWale/html/"
+    $scope.htmlB = "http://pages.cs.wisc.edu/~shaleen/CS784/Data_model_page/html/BikeDekho/html/"
 }]);
 
 app.controller('AppCtrl', ['$scope', '$location', '$mdBottomSheet','$mdSidenav', '$mdDialog',
@@ -44,27 +44,17 @@ app.controller('AppCtrl', ['$scope', '$location', '$mdBottomSheet','$mdSidenav',
             link : '#/Data',
             title: 'Data - Deliverable 1',
             icon: 'dashboard'
-        },
-        {
-            link : '',
-            title: 'Friends',
-            icon: 'group'
-        },
-        {
-            link : '',
-            title: 'Messages',
-            icon: 'message'
         }
     ];
     $scope.admin = [
         {
             link : '',
-            title: 'Trash',
-            icon: 'delete'
+            title: 'Ali Hitawala',
+            icon: 'settings'
         },
         {
-            link : 'showListBottomSheet($event)',
-            title: 'Settings',
+            link : '',
+            title: 'Shaleen Deep',
             icon: 'settings'
         }
     ];
